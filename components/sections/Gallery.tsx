@@ -4,12 +4,12 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Camera, 
-  Calendar, 
-  MapPin, 
-  Users, 
-  Heart, 
+import {
+  Camera,
+  Calendar,
+  MapPin,
+  Users,
+  Heart,
   Building,
   Utensils,
   BookOpen,
@@ -123,7 +123,7 @@ const Gallery = () => {
   ];
 
   const getImagePlaceholder = (imageType: string) => {
-    const colors = {
+    const colors:any = {
       'mahudi-prayer': 'from-purple-300 to-indigo-400',
       'annadan-seva': 'from-orange-300 to-amber-400',
       'guru-purnima': 'from-yellow-300 to-orange-400',
@@ -135,7 +135,7 @@ const Gallery = () => {
       'children-education': 'from-pink-300 to-rose-400'
     };
 
-    const icons = {
+    const icons:any = {
       'mahudi-prayer': <Building className="h-12 w-12" />,
       'annadan-seva': <Utensils className="h-12 w-12" />,
       'guru-purnima': <Award className="h-12 w-12" />,
@@ -160,7 +160,7 @@ const Gallery = () => {
   };
 
   const getCategoryColor = (category: string) => {
-    const colors = {
+    const colors:any = {
       'Ashram Life': 'bg-purple-100 text-purple-700',
       'Seva Activities': 'bg-orange-100 text-orange-700',
       'Events': 'bg-yellow-100 text-yellow-700',
@@ -173,8 +173,8 @@ const Gallery = () => {
     return colors[category] || 'bg-gray-100 text-gray-700';
   };
 
-  const filteredItems = selectedCategory === 'All' 
-    ? galleryItems 
+  const filteredItems = selectedCategory === 'All'
+    ? galleryItems
     : galleryItems.filter(item => item.category === selectedCategory);
 
   return (
@@ -185,7 +185,7 @@ const Gallery = () => {
             Sacred <span className="text-orange-600">Moments Gallery</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore beautiful moments from our ashrams, seva activities, spiritual events, 
+            Explore beautiful moments from our ashrams, seva activities, spiritual events,
             and community gatherings that showcase our divine journey.
           </p>
         </div>
@@ -198,7 +198,7 @@ const Gallery = () => {
               variant={selectedCategory === category.name ? "default" : "outline"}
               className={`${
                 selectedCategory === category.name
-                  ? 'bg-orange-500 hover:bg-orange-600 text-white' 
+                  ? 'bg-orange-500 hover:bg-orange-600 text-white'
                   : 'hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200'
               }`}
               onClick={() => setSelectedCategory(category.name)}
@@ -219,7 +219,7 @@ const Gallery = () => {
               <div className="p-4">
                 {getImagePlaceholder(item.image)}
               </div>
-              
+
               <CardContent className="px-6 pb-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <Badge className={getCategoryColor(item.category)}>
@@ -230,31 +230,31 @@ const Gallery = () => {
                     <span>{item.participants}</span>
                   </div>
                 </div>
-                
+
                 <h3 className="text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
                   {item.title}
                 </h3>
-                
+
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {item.description}
                 </p>
-                
+
                 <div className="space-y-2">
                   <div className="flex items-center text-gray-600 text-sm">
                     <MapPin className="h-4 w-4 mr-2 text-orange-500" />
                     <span>{item.location}</span>
                   </div>
-                  
+
                   <div className="flex items-center text-gray-600 text-sm">
                     <Calendar className="h-4 w-4 mr-2 text-orange-500" />
-                    <span>{new Date(item.date).toLocaleDateString('en-US', { 
-                      month: 'long', 
-                      day: 'numeric', 
-                      year: 'numeric' 
+                    <span>{new Date(item.date).toLocaleDateString('en-US', {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric'
                     })}</span>
                   </div>
                 </div>
-                
+
                 <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white group-hover:scale-105 transition-transform duration-300">
                   <Expand className="mr-2 h-4 w-4" />
                   View Full Image
@@ -270,7 +270,7 @@ const Gallery = () => {
             Share Your Sacred Moments
           </h3>
           <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-            Have beautiful photos from our events, seva activities, or ashram visits? 
+            Have beautiful photos from our events, seva activities, or ashram visits?
             Share them with our community to inspire others and preserve these divine memories.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

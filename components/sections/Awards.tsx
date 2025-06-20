@@ -93,7 +93,7 @@ const Awards = () => {
   ];
 
   const getImagePlaceholder = (type: string) => {
-    const colors = {
+    const colors:any = {
       'spiritual-leadership': 'from-purple-300 to-indigo-300',
       'seva-ratna': 'from-orange-300 to-amber-300',
       'dharma-shiromani': 'from-blue-300 to-cyan-300',
@@ -102,7 +102,7 @@ const Awards = () => {
       'heritage': 'from-yellow-300 to-orange-300'
     };
 
-    const icons = {
+    const icons:any = {
       'spiritual-leadership': <Trophy className="h-16 w-16" />,
       'seva-ratna': <Award className="h-16 w-16" />,
       'dharma-shiromani': <Star className="h-16 w-16" />,
@@ -119,7 +119,7 @@ const Awards = () => {
   };
 
   const getCategoryColor = (category: string) => {
-    const colors = {
+    const colors:any = {
       'Leadership': 'bg-purple-100 text-purple-700',
       'Social Service': 'bg-orange-100 text-orange-700',
       'Spiritual Teaching': 'bg-blue-100 text-blue-700',
@@ -138,7 +138,7 @@ const Awards = () => {
             Awards & <span className="text-orange-600">Recognitions</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Celebrating the recognition received for spiritual leadership, community service, 
+            Celebrating the recognition received for spiritual leadership, community service,
             and contributions to humanity's spiritual growth.
           </p>
         </div>
@@ -150,7 +150,7 @@ const Awards = () => {
               <div className="overflow-hidden rounded-t-lg">
                 {getImagePlaceholder(award.image)}
               </div>
-              
+
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <Badge className={getCategoryColor(award.category)}>
@@ -160,31 +160,31 @@ const Awards = () => {
                     {award.significance}
                   </Badge>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
                   {award.title}
                 </h3>
-                
+
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {award.description}
                 </p>
-                
+
                 <div className="space-y-2">
                   <div className="flex items-center text-gray-600 text-sm">
                     <User className="h-4 w-4 mr-2 text-orange-500" />
                     <span className="font-medium">Awarded by:</span>
                     <span className="ml-1">{award.awardedBy}</span>
                   </div>
-                  
+
                   <div className="flex items-center text-gray-600 text-sm">
                     <Calendar className="h-4 w-4 mr-2 text-orange-500" />
-                    <span>{new Date(award.date).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
+                    <span>{new Date(award.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
                     })}</span>
                   </div>
-                  
+
                   <div className="flex items-center text-gray-600 text-sm">
                     <MapPin className="h-4 w-4 mr-2 text-orange-500" />
                     <span>{award.location}</span>
@@ -200,7 +200,7 @@ const Awards = () => {
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">
             Professional <span className="text-orange-600">Certifications</span>
           </h3>
-          
+
           <div className="grid md:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
               <Card key={index} className="border-0 bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-all duration-300">
@@ -208,16 +208,16 @@ const Awards = () => {
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Award className="h-8 w-8 text-blue-600" />
                   </div>
-                  
+
                   <h4 className="text-lg font-bold text-gray-900 mb-2">{cert.title}</h4>
                   <p className="text-blue-600 font-medium text-sm mb-3">{cert.issuedBy}</p>
-                  
+
                   <div className="space-y-1 text-xs text-gray-600">
                     <div className="flex items-center justify-center">
                       <Calendar className="h-3 w-3 mr-1" />
-                      <span>Issued: {new Date(cert.date).toLocaleDateString('en-US', { 
-                        month: 'short', 
-                        year: 'numeric' 
+                      <span>Issued: {new Date(cert.date).toLocaleDateString('en-US', {
+                        month: 'short',
+                        year: 'numeric'
                       })}</span>
                     </div>
                     <div>Valid: {cert.validUntil}</div>
@@ -236,11 +236,11 @@ const Awards = () => {
               Recognition Summary
             </h3>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              These honors reflect our commitment to spiritual service and community welfare, 
+              These honors reflect our commitment to spiritual service and community welfare,
               motivating us to continue our divine mission with greater dedication.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-4xl font-bold text-orange-600 mb-2">6</div>

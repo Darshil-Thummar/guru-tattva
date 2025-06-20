@@ -74,7 +74,7 @@ const Blog = () => {
   ];
 
   const getImagePlaceholder = (type: string) => {
-    const colors = {
+    const colors:any = {
       'spiritual-teaching': 'from-purple-200 to-indigo-200',
       'guru-purnima': 'from-orange-200 to-amber-200',
       'devotee-story': 'from-green-200 to-emerald-200',
@@ -82,8 +82,8 @@ const Blog = () => {
       'meditation': 'from-pink-200 to-rose-200',
       'annadan': 'from-yellow-200 to-orange-200'
     };
-    
-    const icons = {
+
+    const icons:any = {
       'spiritual-teaching': <BookOpen className="h-12 w-12" />,
       'guru-purnima': <Star className="h-12 w-12" />,
       'devotee-story': <Heart className="h-12 w-12" />,
@@ -107,7 +107,7 @@ const Blog = () => {
             Spiritual <span className="text-orange-600">Wisdom & Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore devotional articles, guru teachings, spiritual experiences, and inspiring stories 
+            Explore devotional articles, guru teachings, spiritual experiences, and inspiring stories
             from our community of devotees.
           </p>
         </div>
@@ -119,8 +119,8 @@ const Blog = () => {
               key={index}
               variant={category.active ? "default" : "outline"}
               className={`${
-                category.active 
-                  ? 'bg-orange-500 hover:bg-orange-600 text-white' 
+                category.active
+                  ? 'bg-orange-500 hover:bg-orange-600 text-white'
                   : 'hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200'
               }`}
             >
@@ -141,15 +141,15 @@ const Blog = () => {
                   <Badge className="bg-orange-500 text-white">Featured</Badge>
                   <Badge variant="outline">{blogPosts[0].category}</Badge>
                 </div>
-                
+
                 <h3 className="text-3xl font-bold text-gray-900 leading-tight">
                   {blogPosts[0].title}
                 </h3>
-                
+
                 <p className="text-lg text-gray-700 leading-relaxed">
                   {blogPosts[0].excerpt}
                 </p>
-                
+
                 <div className="flex items-center space-x-6 text-gray-600">
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-2" />
@@ -164,13 +164,13 @@ const Blog = () => {
                     <span className="text-sm">{blogPosts[0].readTime} read</span>
                   </div>
                 </div>
-                
+
                 <Button className="bg-orange-500 hover:bg-orange-600 text-white">
                   Read Full Article
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
-              
+
               <div className="lg:order-first">
                 {getImagePlaceholder(blogPosts[0].image)}
               </div>
@@ -185,7 +185,7 @@ const Blog = () => {
               <div className="overflow-hidden rounded-t-lg">
                 {getImagePlaceholder(post.image)}
               </div>
-              
+
               <CardHeader className="pb-2">
                 <div className="flex items-center justify-between mb-2">
                   <Badge variant="outline" className="text-xs">
@@ -200,12 +200,12 @@ const Blog = () => {
                   {post.title}
                 </CardTitle>
               </CardHeader>
-              
+
               <CardContent className="space-y-4">
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {post.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
                     <div className="flex items-center text-gray-500 text-xs">
@@ -214,14 +214,14 @@ const Blog = () => {
                     </div>
                     <div className="flex items-center text-gray-500 text-xs">
                       <Calendar className="h-3 w-3 mr-1" />
-                      {new Date(post.date).toLocaleDateString('en-US', { 
-                        month: 'short', 
-                        day: 'numeric', 
-                        year: 'numeric' 
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric'
                       })}
                     </div>
                   </div>
-                  
+
                   <Button size="sm" variant="ghost" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50">
                     Read More
                     <ArrowRight className="ml-1 h-3 w-3" />
@@ -238,7 +238,7 @@ const Blog = () => {
             Stay Connected with Divine Wisdom
           </h3>
           <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter and receive weekly spiritual insights, ashram updates, 
+            Subscribe to our newsletter and receive weekly spiritual insights, ashram updates,
             and inspiring stories directly in your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">

@@ -85,7 +85,7 @@ const Testimonials = () => {
   ];
 
   const getVideoThumbnail = (thumbnail: string) => {
-    const colors = {
+    const colors:any = {
       'rajesh-patel': 'from-blue-300 to-blue-400',
       'priya-sharma': 'from-pink-300 to-rose-400',
       'amit-joshi': 'from-green-300 to-emerald-400',
@@ -107,7 +107,7 @@ const Testimonials = () => {
   };
 
   const getCategoryColor = (category: string) => {
-    const colors = {
+    const colors:any = {
       'Spiritual Growth': 'bg-purple-100 text-purple-700',
       'Personal Experience': 'bg-pink-100 text-pink-700',
       'Life Change': 'bg-green-100 text-green-700',
@@ -126,7 +126,7 @@ const Testimonials = () => {
             Voices of <span className="text-orange-600">Transformation</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Listen to inspiring stories from our devotees who have experienced profound 
+            Listen to inspiring stories from our devotees who have experienced profound
             transformation through spiritual practice and community service.
           </p>
         </div>
@@ -138,8 +138,8 @@ const Testimonials = () => {
               key={index}
               variant={category.active ? "default" : "outline"}
               className={`${
-                category.active 
-                  ? 'bg-orange-500 hover:bg-orange-600 text-white' 
+                category.active
+                  ? 'bg-orange-500 hover:bg-orange-600 text-white'
                   : 'hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200'
               }`}
             >
@@ -158,7 +158,7 @@ const Testimonials = () => {
               <div className="p-4">
                 {getVideoThumbnail(testimonial.thumbnail)}
               </div>
-              
+
               <CardContent className="px-6 pb-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <Badge className={getCategoryColor(testimonial.category)}>
@@ -170,36 +170,36 @@ const Testimonials = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <h3 className="text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
                   {testimonial.title}
                 </h3>
-                
+
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {testimonial.description}
                 </p>
-                
+
                 <div className="space-y-2">
                   <div className="flex items-center text-gray-700 font-medium">
                     <Quote className="h-4 w-4 mr-2 text-orange-500" />
                     <span>{testimonial.name}</span>
                   </div>
-                  
+
                   <div className="flex items-center text-gray-600 text-sm">
                     <MapPin className="h-4 w-4 mr-2 text-orange-500" />
                     <span>{testimonial.location}</span>
                   </div>
-                  
+
                   <div className="flex items-center text-gray-600 text-sm">
                     <Calendar className="h-4 w-4 mr-2 text-orange-500" />
-                    <span>{new Date(testimonial.date).toLocaleDateString('en-US', { 
-                      month: 'short', 
-                      day: 'numeric', 
-                      year: 'numeric' 
+                    <span>{new Date(testimonial.date).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric'
                     })}</span>
                   </div>
                 </div>
-                
+
                 <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white group-hover:scale-105 transition-transform duration-300">
                   <Play className="mr-2 h-4 w-4" />
                   Watch Testimony
@@ -215,7 +215,7 @@ const Testimonials = () => {
             Share Your Transformation Story
           </h3>
           <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-            Have you experienced transformation through your spiritual journey with us? 
+            Have you experienced transformation through your spiritual journey with us?
             We'd love to hear your story and share it with our community to inspire others.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

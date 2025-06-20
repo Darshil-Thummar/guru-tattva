@@ -12,7 +12,7 @@ import {
   Utensils, 
   BookOpen,
   Award,
-  TrendingUp,
+  ArrowUpRight,
   Calendar
 } from 'lucide-react';
 
@@ -118,7 +118,7 @@ const Donations = () => {
           <Card className="text-center border-orange-200 bg-gradient-to-br from-green-50 to-emerald-50 shadow-lg">
             <CardContent className="p-6">
               <div className="flex items-center justify-center mb-4">
-                <TrendingUp className="h-8 w-8 text-green-700" />
+                <ArrowUpRight className="h-8 w-8 text-green-700" />
               </div>
               <div className="text-3xl font-bold text-green-800 mb-2">₹8.3L</div>
               <div className="text-green-700 font-medium">Average Monthly Donations</div>

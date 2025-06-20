@@ -51,8 +51,8 @@ const Footer = () => {
               <span className="text-2xl font-bold text-orange-100">Guru Tattva</span>
             </div>
             <p className="text-orange-200 leading-relaxed">
-              Spreading divine wisdom and serving humanity through the teachings of 
-              Shree Shivkrupanand Swami. Join our spiritual journey of transformation 
+              Spreading divine wisdom and serving humanity through the teachings of
+              Shree Shivkrupanand Swami. Join our spiritual journey of transformation
               and community service.
             </p>
             <div className="space-y-2">
@@ -126,7 +126,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            
+
             <div className="space-y-3">
               <h4 className="font-semibold text-orange-100">Newsletter</h4>
               <p className="text-orange-200 text-sm">
@@ -150,7 +150,7 @@ const Footer = () => {
         <div className="border-t border-orange-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-orange-300 text-sm">
-              © 2024 Guru Tattva. All rights reserved. Built with devotion and love.
+              © 2025 Guru Tattva. All rights reserved. Built with devotion and love.
             </div>
             <div className="flex items-center space-x-6 text-sm text-orange-300">
               <button className="hover:text-orange-200 transition-colors">Privacy Policy</button>
@@ -158,7 +158,7 @@ const Footer = () => {
               <button className="hover:text-orange-200 transition-colors">Donation Policy</button>
             </div>
           </div>
-          
+
           <div className="text-center mt-6 pt-6 border-t border-orange-800">
             <p className="text-orange-300 text-sm italic">
               "Service to humanity is service to the divine" - Shree Shivkrupanand Swami

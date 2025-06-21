@@ -65,15 +65,15 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               item.href.startsWith('/#') ? (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={`transition-colors duration-200 ${
-                    isActive(item.href) 
-                      ? 'text-orange-800 font-medium' 
+                    isActive(item.href)
+                      ? 'text-orange-800 font-medium'
                       : 'text-orange-700 hover:text-orange-800'
                   }`}
                 >
@@ -84,8 +84,8 @@ const Navigation = () => {
                   key={item.name}
                   href={item.href}
                   className={`transition-colors duration-200 ${
-                    isActive(item.href) 
-                      ? 'text-orange-800 font-medium' 
+                    isActive(item.href)
+                      ? 'text-orange-800 font-medium'
                       : 'text-orange-700 hover:text-orange-800'
                   }`}
                 >
@@ -93,7 +93,7 @@ const Navigation = () => {
                 </Link>
               )
             ))}
-            <Button 
+            <Button
               onClick={() => scrollToSection('/#donations')}
               className="bg-orange-600 hover:bg-orange-700 text-white shadow-lg"
             >
@@ -102,7 +102,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-orange-700 hover:text-orange-800"
@@ -114,7 +114,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-orange-200">
+          <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-orange-200">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 item.href.startsWith('/#') ? (
@@ -136,7 +136,7 @@ const Navigation = () => {
                   </Link>
                 )
               ))}
-              <Button 
+              <Button
                 onClick={() => scrollToSection('/#donations')}
                 className="w-full mt-2 bg-orange-600 hover:bg-orange-700 shadow-lg"
               >

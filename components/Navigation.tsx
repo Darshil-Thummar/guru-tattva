@@ -5,6 +5,8 @@ import { Menu, X, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from "next/image";
+import logo from '../assets/img/Gurutattva-Logo-Regi.png'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,8 +62,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <Heart className="h-8 w-8 text-orange-600" />
-            <span className="text-xl font-bold text-orange-800">Guru Tattva</span>
+           <Image src={logo} alt={'Logo'} height={40}/>
           </Link>
 
           {/* Desktop Navigation */}

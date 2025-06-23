@@ -5,8 +5,8 @@ import { Menu, X, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Image from "next/image";
 import logo from '../assets/img/Gurutattva-Logo-Regi.png'
+import Image from "next/image";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,14 +55,20 @@ const Navigation = () => {
     return pathname === href;
   };
 
+  // Check if we're on the home page to determine navbar styling
+  const isHomePage = pathname === '/';
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-200' : 'bg-transparent'
+      scrolled || !isHomePage
+        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-orange-200'
+        : 'transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-           <Image src={logo} alt={'Logo'} height={40}/>
+            <Image src={logo} alt={'Logo'} height={40}/>
           </Link>
 
           {/* Desktop Navigation */}
@@ -72,10 +78,10 @@ const Navigation = () => {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'text-orange-800 font-medium'
-                      : 'text-orange-700 hover:text-orange-800'
+                  className={`transition-colors duration-200 font-medium ${
+                    scrolled || !isHomePage
+                      ? (isActive(item.href) ? 'text-orange-800' : 'text-orange-700 hover:text-orange-800')
+                      : (isActive(item.href) ? 'text-orange-200' : 'text-white/90 hover:text-white')
                   }`}
                 >
                   {item.name}
@@ -84,10 +90,10 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`transition-colors duration-200 ${
-                    isActive(item.href)
-                      ? 'text-orange-800 font-medium'
-                      : 'text-orange-700 hover:text-orange-800'
+                  className={`transition-colors duration-200 font-medium ${
+                    scrolled || !isHomePage
+                      ? (isActive(item.href) ? 'text-orange-800' : 'text-orange-700 hover:text-orange-800')
+                      : (isActive(item.href) ? 'text-orange-200' : 'text-white/90 hover:text-white')
                   }`}
                 >
                   {item.name}
@@ -96,7 +102,7 @@ const Navigation = () => {
             ))}
             <Button
               onClick={() => scrollToSection('/#donations')}
-              className="bg-orange-600 hover:bg-orange-700 text-white shadow-lg"
+              className="bg-orange-600 hover:bg-orange-700 text-white shadow-lg px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
             >
               Donate Now
             </Button>
@@ -106,7 +112,9 @@ const Navigation = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-orange-700 hover:text-orange-800"
+              className={`transition-colors duration-200 ${
+                scrolled || !isHomePage ? 'text-orange-700 hover:text-orange-800' : 'text-white hover:text-orange-200'
+              }`}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -115,14 +123,14 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-orange-200">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-orange-200 rounded-b-lg shadow-lg">
+            <div className="px-4 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 item.href.startsWith('/#') ? (
                   <button
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
-                    className="block w-full text-left px-3 py-2 text-orange-700 hover:text-orange-800 hover:bg-orange-50 rounded-lg"
+                    className="block w-full text-left px-3 py-2 text-orange-700 hover:text-orange-800 hover:bg-orange-50 rounded-lg font-medium transition-colors duration-200"
                   >
                     {item.name}
                   </button>
@@ -130,7 +138,7 @@ const Navigation = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 text-orange-700 hover:text-orange-800 hover:bg-orange-50 rounded-lg"
+                    className="block px-3 py-2 text-orange-700 hover:text-orange-800 hover:bg-orange-50 rounded-lg font-medium transition-colors duration-200"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
@@ -139,7 +147,7 @@ const Navigation = () => {
               ))}
               <Button
                 onClick={() => scrollToSection('/#donations')}
-                className="w-full mt-2 bg-orange-600 hover:bg-orange-700 shadow-lg"
+                className="w-full mt-2 bg-orange-600 hover:bg-orange-700 shadow-lg font-semibold"
               >
                 Donate Now
               </Button>

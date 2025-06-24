@@ -100,6 +100,13 @@ const Navigation = () => {
                 </Link>
               )
             ))}
+            <Link href="/login">
+              <Button
+                className="bg-orange-100 hover:bg-orange-200 text-orange-700 shadow px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105 mr-2"
+              >
+                Login
+              </Button>
+            </Link>
             <Button
               onClick={() => scrollToSection('/#donations')}
               className="bg-orange-600 hover:bg-orange-700 text-white shadow-lg px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
@@ -145,6 +152,14 @@ const Navigation = () => {
                   </Link>
                 )
               ))}
+              <Link href="/login">
+                <Button
+                  className="w-full mt-2 bg-orange-100 hover:bg-orange-200 text-orange-700 shadow font-semibold mb-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Login
+                </Button>
+              </Link>
               <Button
                 onClick={() => scrollToSection('/#donations')}
                 className="w-full mt-2 bg-orange-600 hover:bg-orange-700 shadow-lg font-semibold"

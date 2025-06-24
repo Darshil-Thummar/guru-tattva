@@ -83,9 +83,12 @@ const Offerings = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-24 mt-16 items-stretch h-full min-h-[500px] lg:auto-rows-fr">
           {sevaOpportunities.map((seva, index) => (
-            <div key={index} className="relative group">
+            <div
+              key={index}
+              className={`relative group flex flex-col h-full`}
+            >
               {/* Large Circle Icon - Half outside the card */}
               <div className={`absolute -top-10 left-1/2 transform -translate-x-1/2 z-20 ${seva.color} w-20 h-20 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300 border-4 border-white`}>
                 {seva.icon}
@@ -105,16 +108,16 @@ const Offerings = () => {
               </div>
 
               <Card
-                className={`${seva.bgColor} border-orange-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 backdrop-blur-sm pt-8 rounded-t-none`}
+                className={`${seva.bgColor} border-orange-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 backdrop-blur-sm pt-8 rounded-t-none flex flex-col h-full`}
               >
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <CardHeader className="text-center pb-4 pt-4">
                     <CardTitle className="text-xl font-bold text-orange-900">{seva.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-orange-800 text-center">{seva.description}</p>
+                  <CardContent className="space-y-4 flex-1 flex flex-col">
+                    <p className="text-orange-800 text-center flex-0">{seva.description}</p>
 
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex-0">
                       <h4 className="font-semibold text-orange-900 text-sm">What you'll do:</h4>
                       <ul className="space-y-1">
                         {seva.features.map((feature, idx) => (
@@ -126,7 +129,9 @@ const Offerings = () => {
                       </ul>
                     </div>
 
-                    <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white group-hover:scale-105 transition-transform duration-300 shadow-lg">
+                    <div className="flex-1" /> {/* Spacer to push button to bottom */}
+
+                    <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white group-hover:scale-105 transition-transform duration-300 shadow-lg mt-4">
                       Join This Seva
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
